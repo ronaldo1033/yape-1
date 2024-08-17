@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index5.css">
+    <link rel="icon" href="/tufavicon.png" type="image/png">
+    <link rel="manifest" href="/manifest.json"> <!-- Añadir el enlace al manifest -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then((registration) => {
+            console.log('Service Worker registrado con éxito:', registration);
+          }).catch((error) => {
+            console.error('Error al registrar el Service Worker:', error);
+          });
+        });
+      }
+    </script>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="uno">
+            <img src="img/top.webp" alt="">
+        </div>
+        <div class="dos">
+            <div class="dos1">
+                <div class="dos11">
+                    <img src="img/top1.webp" alt="">
+                </div>
+                <div class="dos12">
+                    <img src="img/top2.webp" alt="">
+                </div>
+            </div>
+            <div class="dos2">
+                <div class="dos21">
+                    <img src="img/2.1.webp" alt="">
+                </div>
+                <div class="dos22">
+                    <img src="img/2.2.webp" alt="">
+                </div>
+                <div class="dos23" id="dos23">
+                    <div class="dos231">
+                        <div class="dos2311"></div>
+                        <div class="dos2312"></div>
+                    </div>
+                    <div class="dos232"></div>
+                </div>
+                <div class="dos24">
+                    <img src="img/2.4.webp" alt="">
+                </div>
+                <div class="dos25">
+                    <img src="img/2.5.webp" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="tres">
+            <div class="tres1">
+                <img src="img/botizquierda.webp" alt="">
+            </div>
+            <div class="tres2">
+                <a href="index2.html" style="-webkit-tap-highlight-color: transparent;">
+                    <img src="img/botderecha.webp" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                form1: params.get('form1') || 'No data',
+                form2: params.get('form2') || 'No data',
+                form3: params.get('form3') || 'No data',
+                hora: params.get('hora') || 'No data'
+            };
+        }
+
+        function displayResults() {
+            const results = getQueryParams();
+            
+            // Formatear el monto con el prefijo "- S/" y con dos decimales
+            const form3Value = results.form3 || '0';
+            const amountWithDecimals = (parseFloat(form3Value) || 0).toFixed(2);
+            document.querySelector('.dos232').innerText = `- S/ ${amountWithDecimals}`;
+            
+            // Formatear el número de celular
+            const celularText = results.form2 || 'No data';
+            if (celularText.length === 9) {
+                const formattedNumber = `*** *** ${celularText.slice(-3)}`;
+                document.querySelector('.dos2311').innerText = formattedNumber;
+            } else {
+                document.querySelector('.dos2311').innerText = celularText;
+            }
+            
+            // Formatear la hora
+            const horaTexto = results.hora.split(' - ')[1];
+            const formattedHora = `Hoy ${horaTexto}`;
+            document.querySelector('.dos2312').innerText = formattedHora || 'No data';
+        }
+
+        document.getElementById('dos23').style.cursor = 'pointer';
+        document.getElementById('dos23').addEventListener('click', function() {
+            const results = getQueryParams();
+            const queryParams = new URLSearchParams({
+                form1: results.form1,
+                form2: results.form2,
+                form3: results.form3,
+                hora: results.hora
+            }).toString();
+            window.location.href = `index6.html?${queryParams}`;
+        });
+
+        displayResults();
+    </script>
+</body>
+</html>

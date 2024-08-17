@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index3.css">
+    <link rel="icon" href="/tufavicon.png" type="image/png">
+    <link rel="manifest" href="/manifest.json"> <!-- Añadir el enlace al manifest -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then((registration) => {
+            console.log('Service Worker registrado con éxito:', registration);
+          }).catch((error) => {
+            console.error('Error al registrar el Service Worker:', error);
+          });
+        });
+      }
+    </script>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="uno">
+            <a href="index.html" style="-webkit-tap-highlight-color: transparent;">
+                <img src="img3/top.webp" alt="">
+            </a>
+        </div>
+        <div class="dos">
+            <form id="form1" action="#">
+                <input type="text" id="nombre" name="form1" placeholder="Ingrese nombre" required>
+            </form>
+        </div>
+        <div class="tres">
+            <form id="form2" action="#">
+                <input type="text" id="numero" name="form2" placeholder="Ingrese numero" required>
+            </form>
+        </div>
+        <div class="cuatro">
+            <div class="cuatro1">
+                <div class="cuatro11">
+                    <img src="img3/s.webp" alt="">
+                </div>
+                <div class="cuatro12">
+                    <form id="form3" action="#">
+                        <input type="text" id="valor" name="form3" placeholder="0" required>
+                    </form>
+                </div>
+            </div>
+            <div class="cuatro2">
+                <p>Límite por yapeo S/ 500, límite total por dia S/ 2000</p>
+            </div>
+        </div>
+        <div class="cinco">
+            <form action="#">
+                <input type="text" id="mensaje" name="mensaje" placeholder="Agregar mensaje" required>
+            </form>
+        </div>
+        <div class="seis">
+            <div class="seis1">
+                <p>OTROS BANCOS</p>
+            </div>
+            <div class="seis2" id="enviarDatos">
+                <p>YAPEAR</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para manejar la entrada en los formularios y la redirección
+        document.querySelectorAll('input[type="text"]').forEach(function(input) {
+            input.addEventListener('input', function() {
+                document.querySelector('.seis1').classList.add('cambio-verde');
+                document.querySelector('.seis2').classList.add('cambio-verde-fondo');
+                
+                // Aplicar formato en tiempo real al número de teléfono solo cuando tenga 9 dígitos
+                if (input.name === 'form2') {
+                    let rawNumber = input.value.replace(/\D/g, ''); // Elimina caracteres no numéricos
+                    if (rawNumber.length === 9) {
+                        // Aplica el formato solo cuando el número tiene 9 dígitos
+                        input.value = `*** *** ${rawNumber.slice(-3)}`;
+                    }
+                }
+            });
+        });
+
+        document.getElementById('enviarDatos').addEventListener('click', function() {
+            // Recolecta todos los datos de los formularios
+            var formData = {};
+            var forms = document.querySelectorAll('form');
+
+            forms.forEach(function(form) {
+                var inputs = form.querySelectorAll('input[type="text"]');
+                inputs.forEach(function(input) {
+                    // No aplicamos formato aquí, solo recolectamos datos
+                    formData[input.name] = input.value;
+                });
+            });
+
+            // Convierte el objeto formData a una cadena de parámetros de URL
+            var params = new URLSearchParams(formData).toString();
+
+            // Redirige a la página de resultados con los datos en la URL
+            window.location.href = 'index4.html?' + params;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor {
+    background: linear-gradient(
+        to bottom,
+        #792f86 0%, /* Color superior */
+        #792f86 18%, /* 17% es 85% del primer 20% */
+        #762581 20%, /* Color inferior de ese 20% */
+        #762581 100% /* Parte inferior del resto */
+    );
+    display: flex;
+    flex-direction: column;
+    height: 105vh;
+    overflow: hidden;
+}
+
+
+/* index4.css */
+
+.uno {
+    height: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
+    position: relative;
+    background-color: #792f86; /* Color de fondo morado */
+    
+}
+
+
+.uno1{
+    height: 95%;
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center;
+
+}
+.uno1 img{
+    width: 58%;
+}
+.uno2{
+
+    height: 5%;
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center;
+}
+.uno2 img{
+    width: 100%;
+}
+.dos {
+    height: 55%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: white;
+}
+
+.dos1 {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', 'Helvetica', 'Segoe UI', sans-serif;
+    color: #7e348d;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.dos2 {
+    height: 20%;
+    font-family: 'Arial', 'Helvetica', 'Segoe UI', sans-serif;
+    color: #7e348d;
+    font-size: 52px;
+    display: flex;
+    flex-direction: row;
+}
+
+.dos21 {
+    width: 45%;
+}
+
+.dos21 img {
+    width: 34%;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 0.18em;
+    position: relative;
+    left: 0.1em;
+}
+
+.dos22 {
+    width: 53%;
+    margin-top: 0.2em;
+}
+
+
+.dos3 {
+    height: 25%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Arial', 'Helvetica', 'Segoe UI', sans-serif;
+    font-weight: 401;
+    font-size: 21px;
+    color: #292241;
+    position: relative;
+    bottom: 25px;
+}
+
+.hora {
+    margin-top: 0.3em; /* Ajusta la distancia desde el contenido del formulario */
+    font-size: 16px; /* Tamaño de fuente para la hora */
+    font-family: 'Arial', 'Helvetica', 'Segoe UI', sans-serif;
+    font-size: 15px;
+    color: #716d7e;
+    font-weight: 400;
+}
+
+
+
+
+
+.dos5 {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #e1e1e1;
+    border-bottom: 2px solid #e1e1e1;
+    font-family: 'Arial', 'Helvetica', 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+.celular-label {
+    color: #9a999e; /* Color específico para "N° de celular:" */
+    margin-right: 8px; /* Espacio después del texto "N° de celular:" */
+}
+
+.celular-number {
+    color: #000000; /* Color para el número de celular, si es necesario */
+}
+
+.dos6 {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', 'Helvetica', 'Segoe UI', sans-serif;
+}
+
+.destino-label {
+    color: #9a999e; /* Color específico para "Destino: " */
+}
+
+.dos7 {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #e1e1e1;
+    border-bottom: 2px solid #e1e1e1;
+    font-family: 'Arial', 'Helvetica', 'Segoe UI', sans-serif;
+}
+
+.operacion-label {
+    color: #9a999e; /* Color específico para "N° de operacion:" */
+}
+
+.operacion-number {
+    color: #000000; /* Color para el número de operación */
+}
+
+.dos8 {
+    height: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.tres {
+    height: 12%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.tres1{
+    height: 8%;
+}
+.tres1 img{
+    width: 100%;
+    height: auto;
+    position: relative;
+    bottom: 0.2em;
+}
+.tres2{
+    height: 92%;
+}
+.tres2 img{
+    margin-top: 0.6em;
+    width: 100%;
+}
+.cuatro {
+
+    height: 13%;
+    display: flex;
+    flex-direction: row;
+    background-color: #772683;
+}
+.cuatro1 {
+    width: 37%;
+
+    display: flex;
+    justify-content: flex-end; /* Alinea la imagen a la derecha */
+    align-items: center;
+}
+
+.cuatro1 img {
+    width: 50%;
+}
+
+.cuatro2{
+    width: 26%;
+
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center;
+
+}
+.cuatro2 img{
+    margin-left: 1.2em;
+    width: 70%;
+    position: relative;
+    bottom: -0.15em;
+}
+.cuatro3 {
+    width: 37%;
+    
+    display: flex;
+    justify-content: flex-start; /* Alinea la imagen a la izquierda */
+    align-items: center;
+
+}
+
+.cuatro3 img {
+    width: 55%;
+}
+/*
+.dos4 {
+    border: 2px solid red;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', 'Helvetica', 'Segoe UI', sans-serif;
+    padding-bottom: 2.5em;
+    font-size: 15px;
+    color: #716d7e;
+    margin-top: em; 
+}

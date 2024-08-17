@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index2.css">
+        <link rel="icon" href="/tufavicon.png" type="image/png">
+        <link rel="manifest" href="/manifest.json"> <!-- Añadir el enlace al manifest -->
+        <script>
+          if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js').then((registration) => {
+                console.log('Service Worker registrado con éxito:', registration);
+              }).catch((error) => {
+                console.error('Error al registrar el Service Worker:', error);
+              });
+            });
+          }
+        </script>
+        <title>Document</title>
+    </head>
+<body>
+    <div class="contenedor">
+        <div class="uno">
+            <div class="uno1">
+                <a href="index.html" style="-webkit-tap-highlight-color: transparent;">
+                <img src="img2/izquierda.webp" alt="">
+                </a>
+            </div>
+            <div class="uno2">
+                <a href="index3.html" style="-webkit-tap-highlight-color: transparent;">
+                <img src="img2/derecha.webp" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="dos">
+            <img src="img2/flecha.webp" alt="">
+            <form class="formu">
+                <input class="formu" type="text" name="contacto" placeholder="Ingresa el celular o busca un contacto" >
+              </form>
+        </div>
+        <div class="tres">
+            <img src="img2/bot.webp" alt="">
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; /* Evita que el contenido se desborde fuera del contenedor */
+}
+.uno{
+    height: 7%;
+}
+.uno img{
+    margin-top: 1em;
+    width: 100%;
+    height: auto;
+}
+.dos{
+    height: 5%;
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center;
+}
+.dos input{
+    width: 300px;
+    border: none;
+    text-align: center;
+    color: #80408c;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    font-size: 17px;
+    margin-top: 1em;
+}
+.tres{
+    height: 3%;
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center;
+}
+.tres input{
+    width: 300px;
+    border: none;
+    text-align: center;
+    color: #97969c;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.cuatro{
+    height: 62%;
+}
+.cuatro1{
+    height: 52%;
+    display: flex;
+    flex-direction: row;
+}
+.cuatro11{
+    width: 45%;
+    height: auto;
+    display: flex; /* Usa flexbox para alinear el contenido */
+    justify-content: flex-end; /* Alinea el contenido horizontalmente al final del contenedor */
+    align-items: flex-end;
+}
+.cuatro11 img{
+    max-width: 21%;
+    height: auto;
+    margin-bottom: 0.5em;
+    margin-right: -0.2em;
+}
+.cuatro12 {
+    width: 55%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start; /* Alinea horizontalmente al inicio del contenedor */
+    align-items: flex-end; /* Alinea verticalmente al final del contenedor */
+}
+.cuatro12 input{
+    width: 120px;
+    height: 45px;
+    color: #80408c;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 55px;
+    font-weight: 400;
+}
+.cuatro2{
+    height: 48%;
+    text-align: center;
+    color: #6b6776;
+    margin-top: 6%;
+}
+.cuatro2 p {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f4fa; /* Color de fondo del párrafo */
+    border-radius: 10px; /* Radio de borde para el párrafo */
+    padding: 6px 10px; /* Espacio alrededor del texto */
+    display: inline;
+    font-size: 12px;
+}
+.cinco{
+    height: 12%;
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center;
+    margin-bottom: 18%;
+    border-bottom: 1px solid #a7a5b0;
+    margin-left: 6%;
+    margin-right: 6%;
+    display: flex;
+    color: red;
+    align-items: flex-end; /* Alinea verticalmente al final del contenedor */
+}
+.cinco input{
+    width: 420px;
+    height: 60px;
+    text-align: center;
+    font-size: 15px;
+    color: #80408c;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 440;
+    font-size: 15px;
+}
+
+.seis{
+    height: 11%;
+    display: flex;
+    flex-direction: row;
+    color: #8f8a9e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+.seis1{
+    width: 50%;
+    border: 2px solid #e2dfea;
+    border-radius: 15px;
+    margin-bottom: 6%;
+    margin-right: 2%;
+    margin-left: 7%;
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center;
+}
+.seis2{
+    width: 50%;
+    background-color: #e2dfea;
+    margin-bottom: 6%;
+    margin-right: 6%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center;
+}
+input, textarea, select, button {
+    border: none;
+    outline: none; 
+}
+
+/* Nueva clase para cambiar color a verde en el borde y texto */
+.cambio-verde {
+    border-color: #3abfa4 !important; /* Color verde */
+    color: #3abfa4 !important; /* Texto en verde */
+}
+
+/* Nueva clase para cambiar el fondo a verde y el texto a blanco */
+.cambio-verde-fondo {
+    background-color: #0fcbb3 !important; /* Fondo verde */
+    color: #FFFFFF !important; /* Texto blanco */
+}

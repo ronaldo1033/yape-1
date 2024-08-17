@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor {
+    background: #742284;
+    display: flex;
+    flex-direction: column;
+    height: 110vh;
+    overflow: hidden; /* Evita que el contenido se desborde fuera del contenedor */
+}
+
+.uno {
+
+    background-color: #742284;
+    height: 8%;
+    position: fixed; /* Mantiene el div en una posición fija */
+    top: 0; /* Ubica el div en la parte superior */
+    left: 0;
+    width: 100%; /* Asegura que el div ocupe todo el ancho del viewport */
+    z-index: 1; /* Asegura que el div esté por encima de otros elementos */
+}
+.uno img{
+    width: 100%;
+    height: auto;
+}
+.dos {
+
+    height: 87.5%; /* Ajusta la altura para que .dos ocupe el espacio restante */
+    margin-top: 7%; /* Compensa la altura de .uno */
+    margin-bottom: 8%; /* Compensa la altura de .tres */
+    overflow-y: auto; /* Permite el desplazamiento del contenido si es mayor que el contenedor */
+    margin-top: 13%;
+}
+.dos1{
+    height: 42%;
+}
+.dos11{
+
+    height: 31%;
+}
+.dos11 img{
+    width: 100%;
+    height: auto;
+
+}
+.dos12{
+    height: 69%;
+}
+.dos12 img{
+    width: 100%;
+    height: auto;
+}
+.dos2{
+    background-color: #ffffff;
+    height: 58%;
+}
+.dos21{
+
+    height: 16.25%;
+}
+.dos21 img{
+    width: 100%;
+    height: auto;
+}
+.dos22{
+
+    height: 16.25%;
+}
+.dos22 img{
+    width: 100%;
+    height: auto;
+}
+.dos23{
+
+    height: 20%;
+}
+.dos23 img{
+    width: 100%;
+    height: auto;
+}
+.dos24{
+
+    height: 20%;
+}
+.dos24 img{
+    width: 100%;
+    height: auto;
+    
+    
+}
+.dos25{
+
+    height: 20%;
+}
+.dos25 img{
+    width: 100%;
+    height: auto;
+    margin-top: 0.6%;
+}
+
+
+
+
+.tres {
+    background-color: #fffdfe;
+    height: 12%;
+    position: fixed; /* Mantiene el div en una posición fija */
+    bottom: 0; /* Ubica el div en la parte inferior */
+    left: 0;
+    width: 100%; /* Asegura que el div ocupe todo el ancho del viewport */
+    z-index: 1; /* Asegura que el div esté por encima de otros elementos */
+    display: flex;
+    flex-direction: row;
+}
+.tres1{
+    width: 50%;
+
+}
+.tres1 img{
+    width: 100%;
+}
+.tres2{
+    width: 50%;
+
+}
+.tres2 img{
+    width: 100%;
+}
+

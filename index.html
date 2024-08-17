@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="icon" href="/tufavicon.png" type="image/png">
+        <link rel="stylesheet" href="index.css">
+        <link rel="manifest" href="/manifest.json"> <!-- Añadir el enlace al manifest -->
+        <script>
+          if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js').then((registration) => {
+                console.log('Service Worker registrado con éxito:', registration);
+              }).catch((error) => {
+                console.error('Error al registrar el Service Worker:', error);
+              });
+            });
+          }
+        </script>
+    </head>
+<body>
+    <div class="contenedor">
+        <div class="uno">
+            <img src="img/top.webp" alt="">
+
+
+        </div>
+        <div class="dos">
+         
+            <div class="dos1">
+                <div class="dos11">
+                    <img src="img/top1.webp" alt="">
+                </div>
+                <div class="dos12">
+                    <img src="img/top2.webp" alt="">
+                </div>
+            </div>
+            <div class="dos2">
+                <div class="dos21">
+                    <img src="img/2.1.webp" alt="">
+                </div>
+                <div class="dos22">
+                    <img src="img/2.2.webp" alt="">
+                </div>
+                <div class="dos23">
+                    <img src="img/2.3.jpg" alt="">
+                </div>
+                <div class="dos24">
+                    <img src="img/2.4.webp" alt="">
+                </div>
+                <div class="dos25">
+                    <img src="img/2.5.webp" alt="">
+                </div>
+            </div>
+
+        </div>
+        <div class="tres">
+            <div class="tres1">
+                <img src="img/botizquierda.webp" alt="">
+            </div>
+            <div class="tres2">
+                <a href="index2.html" style="-webkit-tap-highlight-color: transparent;">
+                <img src="img/botderecha.webp" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+ 913098735

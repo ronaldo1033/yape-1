@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index6.css">
+    <link rel="icon" href="/tufavicon.png" type="image/png">
+    <link rel="manifest" href="/manifest.json"> <!-- Añadir el enlace al manifest -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then((registration) => {
+            console.log('Service Worker registrado con éxito:', registration);
+          }).catch((error) => {
+            console.error('Error al registrar el Service Worker:', error);
+          });
+        });
+      }
+    </script>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="uno">
+            <div class="uno1">
+                
+                <img src="img6/image.webp"  alt="">
+                
+            </div>
+            <div class="uno2">
+                <img src="img4/top.jpg" alt="">
+            </div>
+        </div>
+        <div class="dos">
+            <div class="dos1">
+                <p>¡Yapeaste!</p>
+            </div>
+            <div class="dos2">
+                <div class="dos21">
+                    <img src="img3/s.webp" alt="">
+                </div>
+                <div class="dos22"></div>
+            </div>
+            <div class="dos3">
+                <!-- Contenido del formulario -->
+                <div id="formContent"></div>
+                <!-- Contenedor para la hora -->
+                <div class="hora"></div>
+            </div>
+                <div class="dos5">
+                    <span class="celular-label">N° de celular:</span>
+                    <span class="celular-number">*** *** 932</span>
+                </div>
+                <div class="dos6">
+                    <p><span class="destino-label">Destino: </span>Yape</p>
+                </div>
+                <div class="dos7">
+                    <p><span class="operacion-label">N° de operacion:</span> <span class="operacion-number">12345678</span></p>
+                </div>
+                <div class="dos8"></div>
+        </div>
+        <div class="cuatro">
+            <div class="cuatrouno">
+                <img src="img4/bot.jpg" alt="">
+            </div>
+            <div class="cuatrodos">
+                <div class="cuatro1">
+                    <img src="img6/izquierda.jpg" alt="">
+                </div>
+                <div class="cuatro2">
+                    <img src="img6/derecha.jpg" alt="">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        function getQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    let result = {
+        form1: '',
+        form2: '',
+        form3: ''
+    };
+
+    params.forEach((value, key) => {
+        if (key === 'form1') {
+            result.form1 = value;
+        } else if (key === 'form2') {
+            result.form2 = value;
+        } else if (key === 'form3') {
+            result.form3 = value;
+        }
+    });
+
+    return result;
+}
+
+function displayResults() {
+    const results = getQueryParams();
+    const form1Text = results.form1 || 'No data';
+    const words = form1Text.split(' ');
+
+    if (words.length === 4) {
+        document.querySelector('#formContent').innerHTML = words.slice(0, 3).join(' ') + '<br>' + words[3];
+    } else {
+        document.querySelector('#formContent').innerText = form1Text;
+    }
+
+    document.querySelector('.dos22').innerText = results.form3 || 'No data';
+
+    const form2Text = results.form2 || 'No data';
+    if (form2Text.length === 9) {
+        const formattedNumber = `*** *** ${form2Text.slice(-3)}`;
+        document.querySelector('.celular-number').innerText = formattedNumber;
+    } else {
+        document.querySelector('.celular-number').innerText = form2Text;
+    }
+
+    const now = new Date();
+    const day = now.getDate().toString().padStart(2, '0');
+    const monthNames = ['ene.', 'feb.', 'mar.', 'abr.', 'may.', 'jun.', 'jul.', 'ago.', 'sep.', 'oct.', 'nov.', 'dic.'];
+    const month = monthNames[now.getMonth()];
+    const year = now.getFullYear();
+    const hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    const formattedHours = (hours % 12 || 12).toString().padStart(2, '0');
+    const formattedDateTime = `${day} ${month} ${year} - ${formattedHours}:${minutes} ${ampm}`;
+
+    document.querySelector('.hora').innerText = formattedDateTime;
+
+    const randomOperationNumber = Math.floor(10000000 + Math.random() * 90000000);
+    document.querySelector('.operacion-number').innerText = randomOperationNumber;
+
+    // Set link to include query parameters with form results
+    const link = document.getElementById('linkToResults');
+    const queryParams = new URLSearchParams({
+        form1: results.form1,
+        form2: results.form2,
+        form3: results.form3,
+        hora: document.querySelector('.hora').innerText
+    }).toString();
+    link.href = `index5.html?${queryParams}`;
+}
+
+displayResults();
+    document.addEventListener("DOMContentLoaded", function() {
+    const overlayGif = document.querySelector('.overlay-gif'); // Selecciona el GIF de confeti
+
+    // Verifica si el GIF de confeti ya se ha mostrado
+    if (!localStorage.getItem('confettiShown')) {
+        // Muestra el GIF de confeti
+        overlayGif.style.display = 'block';
+        // Marca en localStorage que el GIF de confeti ya se ha mostrado
+        localStorage.setItem('confettiShown', 'true');
+    } else {
+        // Oculta el GIF de confeti si ya se ha mostrado
+        overlayGif.style.display = 'none';
+    }
+});
+    function displayResults() {
+    const results = getQueryParams();
+    const form1Text = results.form1 || 'No data';
+    const words = form1Text.split(' ');
+
+    if (words.length <= 3) {
+        document.querySelector('#formContent').innerText = words.join(' ');
+    } else {
+        document.querySelector('#formContent').innerHTML = `
+            ${words.slice(0, 3).join(' ')}<br>
+            ${words.slice(3).join(' ')}
+        `;
+    }
+
+    document.querySelector('.dos22').innerText = results.form3 || 'No data';
+
+    const form2Text = results.form2 || 'No data';
+    if (form2Text.length === 9) {
+        const formattedNumber = `*** *** ${form2Text.slice(-3)}`;
+        document.querySelector('.celular-number').innerText = formattedNumber;
+    } else {
+        document.querySelector('.celular-number').innerText = form2Text;
+    }
+
+    const now = new Date();
+    const day = now.getDate().toString().padStart(2, '0');
+    const monthNames = ['ene.', 'feb.', 'mar.', 'abr.', 'may.', 'jun.', 'jul.', 'ago.', 'sep.', 'oct.', 'nov.', 'dic.'];
+    const month = monthNames[now.getMonth()];
+    const year = now.getFullYear();
+    const hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    const formattedHours = (hours % 12 || 12).toString().padStart(2, '0');
+    const formattedDateTime = `${day} ${month} ${year} - ${formattedHours}:${minutes} ${ampm}`;
+
+    document.querySelector('.hora').innerText = formattedDateTime;
+
+    const randomOperationNumber = Math.floor(10000000 + Math.random() * 90000000);
+    document.querySelector('.operacion-number').innerText = randomOperationNumber;
+
+    // Set link to include query parameters with form results
+    const link = document.getElementById('linkToResults');
+    const queryParams = new URLSearchParams({
+        form1: results.form1,
+        form2: results.form2,
+        form3: results.form3,
+        hora: document.querySelector('.hora').innerText
+    }).toString();
+    link.href = `index5.html?${queryParams}`;
+}
+
+displayResults();
+function displayResults() {
+    const results = getQueryParams();
+    const form1Text = results.form1 || 'No data';
+    const words = form1Text.split(' ');
+
+    if (words.length <= 3) {
+        document.querySelector('#formContent').innerText = words.join(' ');
+    } else {
+        document.querySelector('#formContent').innerHTML = `
+            ${words.slice(0, 3).join(' ')}<br>
+            ${words.slice(3).join(' ')}
+        `;
+    }
+
+    document.querySelector('.dos22').innerText = results.form3 || 'No data';
+
+    const form2Text = results.form2 || 'No data';
+    if (form2Text.length === 9) {
+        const formattedNumber = `*** *** ${form2Text.slice(-3)}`;
+        document.querySelector('.celular-number').innerText = formattedNumber;
+    } else {
+        document.querySelector('.celular-number').innerText = form2Text;
+    }
+
+    const now = new Date();
+    const day = now.getDate().toString().padStart(2, '0');
+    const monthNames = ['ene.', 'feb.', 'mar.', 'abr.', 'may.', 'jun.', 'jul.', 'ago.', 'sep.', 'oct.', 'nov.', 'dic.'];
+    const month = monthNames[now.getMonth()];
+    const year = now.getFullYear();
+    const hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    const formattedHours = (hours % 12 || 12).toString().padStart(2, '0');
+    const formattedDateTime = `${day} ${month} ${year} - ${formattedHours}:${minutes} ${ampm}`;
+
+    document.querySelector('.hora').innerText = formattedDateTime;
+
+    const randomOperationNumber = Math.floor(10000000 + Math.random() * 90000000);
+    document.querySelector('.operacion-number').innerText = randomOperationNumber;
+
+    // Set link to include query parameters with form results
+    const link = document.getElementById('linkToResults');
+    const queryParams = new URLSearchParams({
+        form1: results.form1,
+        form2: results.form2,
+        form3: results.form3,
+        hora: document.querySelector('.hora').innerText
+    }).toString();
+    link.href = `index5.html?${queryParams}`;
+}
+
+displayResults();
+    </script>
+</body>
+</html>

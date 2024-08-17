@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; /* Evita que el contenido se desborde fuera del contenedor */
+}
+.uno{
+
+    height: 14%;
+    display: flex;
+    flex-direction: row;
+}
+.uno1{
+    margin-top: 0.1%;
+    width: 50%;
+
+}
+.uno1 img{
+    width: 100%;
+    height: auto;
+}
+.uno2{
+    width: 50%;
+
+}
+.uno2 img{
+    width: 100%;
+    height: auto;
+}
+
+.dos {
+    border: 2px solid #e4e4e4;
+    height: 12%;
+    border-radius: 10px;
+    margin: 7% 2% 2% 2%; /* Ajuste de márgenes */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    display: flex; /* Usar flexbox para centrar el contenido */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
+.dos img{
+    width: 10%;
+    margin-left: 1em;
+}
+.formu{
+    border: none;
+    width: 90%;
+    margin-left: 0.6em;
+    font-size: 100%;
+}
+.tres{
+
+    height: 74%;
+}
+.tres img{
+    width: 100%;
+    height: auto;
+}
+input, textarea, select, button {
+    border: none;
+    outline: none; /* Quita el borde que aparece cuando haces clic */
+}

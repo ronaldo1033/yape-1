@@ -1,0 +1,46 @@
+{
+    "name": "Yape",
+    "short_name": "Yape",
+    "description": "Yape Ronal",
+    "background_color": "#ffffff",
+    "theme_color": "#742284",
+    "orientation": "portrait",
+    "display": "standalone",
+    "start_url": "./?utm_source=web_app_manifest",
+    "scope": "./",
+    "lang": "es-MX",
+    "icons": [
+      {
+        "src": "/descarga.png",
+        "sizes": "225x225",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "/icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "/screenshot-wide.png",
+        "sizes": "1280x720",
+        "type": "image/png",
+        "form_factor": "wide"
+      },
+      {
+        "src": "/screenshot-mobile.png",
+        "sizes": "640x1423",
+        "type": "image/png"
+      }
+    ]
+  }
+  
