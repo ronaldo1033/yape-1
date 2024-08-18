@@ -132,6 +132,7 @@ html, body {
     border-bottom: 2px solid #e1e1e1;
     font-family: 'Arial', 'Helvetica', 'Segoe UI', sans-serif;
     text-align: center;
+    font-size: 20px;
 }
 
 .celular-label {
@@ -149,6 +150,7 @@ html, body {
     justify-content: center;
     align-items: center;
     font-family: 'Arial', 'Helvetica', 'Segoe UI', sans-serif;
+    font-size: 20px;
 }
 
 .destino-label {
@@ -163,6 +165,7 @@ html, body {
     border-top: 2px solid #e1e1e1;
     border-bottom: 2px solid #e1e1e1;
     font-family: 'Arial', 'Helvetica', 'Segoe UI', sans-serif;
+    font-size: 20px;
 }
 
 .operacion-label {
