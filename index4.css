@@ -88,19 +88,17 @@ html, body {
 }
 
 .dos21 img {
-    width: 34%;
+    width: 28%;
     display: block;
     margin-left: auto;
-    margin-right: 0;
     margin-top: 0.18em;
     position: relative;
-    left: 0.1em;
 }
 
 .dos22 {
     width: 53%;
     margin-top: 0.2em;
-    margin-left: 0.1em;
+    margin-left: -0.02em;
 }
 
 
