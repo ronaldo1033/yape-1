@@ -190,35 +190,23 @@ html, body {
     align-items: center;
     background-color: white;
 }
+.dos8 img{
 
-.tres {
-    height: 12%;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-.tres1{
-    height: 8%;
-}
-.tres1 img{
-    width: 100%;
+    width: 100.3%;
     height: auto;
     position: relative;
-    bottom: 0.2em;
+    top: 25%;
 }
-.tres2{
-    height: 92%;
-}
-.tres2 img{
-    margin-top: 0.6em;
-    width: 100%;
-}
+
 .cuatro {
 
     height: 13%;
     display: flex;
     flex-direction: row;
     background-color: #772683;
+
 }
+
 .cuatro1 {
     width: 37%;
 
@@ -256,17 +244,15 @@ html, body {
 
 .cuatro3 img {
     width: 55%;
+    position: relative;
+    top: 5%;
 }
-/*
-.dos4 {
-    border: 2px solid red;
+.cinco{
+    height: 12%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.cinco img{
+    width: 100%;
     height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Arial', 'Helvetica', 'Segoe UI', sans-serif;
-    padding-bottom: 2.5em;
-    font-size: 15px;
-    color: #716d7e;
-    margin-top: em; 
 }
